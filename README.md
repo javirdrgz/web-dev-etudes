@@ -1,2 +1,2 @@
 # web-dev-etudes
-A collection of tiny projects for practicing web development
+A collection of tiny projects for improving web development skills
