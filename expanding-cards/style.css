@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
   box-sizing: border-box;
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Muli', sans-serif;
   margin: 0;
   height: 100vh;
   display: grid;
@@ -18,16 +18,16 @@ body {
 
 .container {
   display: flex;
-  padding: 0 5vw;
+  width: 90vw;
 }
 
 figure {
   position: relative;
-  padding: 0 0.5em;
-  margin: 0;
-  transition: all .5s ease-in-out;
-  overflow: hidden;
+  margin: 0 0.5em;
+  transition: flex 1s ease-in-out;
+  -webkit-transition: all 700ms ease-in;
   flex: .5;
+  cursor: pointer;
 }
 
 figcaption {
@@ -38,6 +38,8 @@ figcaption {
   font-size: 1.5rem;
   font-weight: 600;
   visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in 0.2s;
 }
 
 .active {
@@ -46,6 +48,7 @@ figcaption {
 
 .active figcaption {
   visibility: visible;
+  opacity: 1;
 }
 
 img {
