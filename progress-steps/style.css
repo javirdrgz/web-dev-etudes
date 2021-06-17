@@ -27,35 +27,40 @@ ol {
 }
 
 li {
-  --bw: 3px;
+  --bw: 4px;
+  --li-hm: 3em;
   position: relative;
   display: grid;
   place-content: center;
   padding: 1em;
-  margin: 0 3em;
+  margin: 0 var(--li-hm);
   width: 1.1em;
   height: 1.1em;
   color: #888;
   background-color: #fff;
   border: var(--bw) solid #e0e0e0;
   border-radius: 100%;
-  transition: all 0.5s ease-in;
+  transition: all 1s ease;
 }
 
 li::after {
+  z-index: -1;
   content: '';
   position: absolute;
   right: 100%;
   margin-right: var(--bw);
   top: 50%;
-  background-color: #e0e0e0;
-  width: 6em;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, #0c8cdd 50%, #e0e0e0 50%);
+  background-size: 200% 100%;
+  background-position: bottom right;
+  width: calc(var(--li-hm) + var(--li-hm));
   height: var(--bw);
   transition: all 0.5s ease-in;
 }
 
 li.completed::after {
-  background-color: #0c8cdd;
+  background-position: bottom left;
 }
 
 li:first-child::after {
