@@ -39,24 +39,26 @@ li {
   background-color: #fff;
   border: var(--bw) solid #e0e0e0;
   border-radius: 100%;
+  transition: all 0.5s ease-in;
 }
 
 li::after {
   content: '';
   position: absolute;
-  left: 100%;
-  margin-left: var(--bw);
+  right: 100%;
+  margin-right: var(--bw);
   top: 50%;
   background-color: #e0e0e0;
   width: 6em;
   height: var(--bw);
+  transition: all 0.5s ease-in;
 }
 
 li.completed::after {
   background-color: #0c8cdd;
 }
 
-li:last-child::after {
+li:first-child::after {
   display: none;
 }
 
