@@ -10,6 +10,7 @@ const dec = (step) => (step > 1 ? step - 1 : step);
 const steps = document.querySelectorAll("li");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
+
 const updateSteps = () => {
   steps.forEach((s, i) =>
     i < step ? s.classList.add("completed") : s.classList.remove("completed")
@@ -18,10 +19,14 @@ const updateSteps = () => {
 
 next.addEventListener("click", () => {
   step = inc(step);
+  step === steps.length && (next.disabled = true);
+  prev.disabled = false;
   updateSteps();
 });
 
 prev.addEventListener("click", () => {
   step = dec(step);
+  step === 1 && (prev.disabled = true);
+  next.disabled = false;
   updateSteps();
 });
