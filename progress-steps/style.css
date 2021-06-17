@@ -27,6 +27,7 @@ ol {
 }
 
 li {
+  --bw: 3px;
   position: relative;
   display: grid;
   place-content: center;
@@ -34,9 +35,9 @@ li {
   margin: 0 3em;
   width: 1.1em;
   height: 1.1em;
-  color: #999;
+  color: #888;
   background-color: #fff;
-  border: 3px solid #e0e0e0;
+  border: var(--bw) solid #e0e0e0;
   border-radius: 100%;
 }
 
@@ -44,11 +45,11 @@ li::after {
   content: '';
   position: absolute;
   left: 100%;
-  margin-left: 3px;
+  margin-left: var(--bw);
   top: 50%;
   background-color: #e0e0e0;
   width: 6em;
-  height: 3px;
+  height: var(--bw);
 }
 
 li.completed::after {
@@ -60,7 +61,7 @@ li:last-child::after {
 }
 
 .completed {
-  border: 3px solid #0c8cdd;
+  border-color: #0c8cdd;
 }
 
 .controls {
