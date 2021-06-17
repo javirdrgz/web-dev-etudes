@@ -18,28 +18,30 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  padding: 0 5vw;
 }
 
 figure {
   position: relative;
   padding: 0 0.5em;
   margin: 0;
-  transition: flex-shrink .5s ease-in-out;
+  transition: all .5s ease-in-out;
   overflow: hidden;
+  flex: .5;
 }
 
 figcaption {
   position: absolute;
+  bottom: 5%;
+  left: 5%;
   color: #fff;
-  font-size: 1.2rem;
-  bottom: 3%;
-  left: 10%;
+  font-size: 1.5rem;
+  font-weight: 600;
   visibility: hidden;
 }
 
 .active {
-  flex-shrink: .7;
+  flex: 5;
 }
 
 .active figcaption {
@@ -48,7 +50,7 @@ figcaption {
 
 img {
   max-width: 100%;
-  border-radius: 1em;
+  border-radius: 3em;
   height: 80vh;
   object-fit: cover;
 }
