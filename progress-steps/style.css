@@ -2,6 +2,8 @@
 
 :root {
   box-sizing: border-box;
+  --progress-fill: #0c8cdd;
+  --progress-empty: #e0e0e0;
 }
 
 *, *::before, *::after {
@@ -38,7 +40,7 @@ li {
   height: 1.1em;
   color: #888;
   background-color: #fff;
-  border: var(--bw) solid #e0e0e0;
+  border: var(--bw) solid var(--progress-empty);
   border-radius: 100%;
   transition: all 1s ease;
 }
@@ -51,7 +53,7 @@ li::after {
   margin-right: var(--bw);
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(to right, #0c8cdd 50%, #e0e0e0 50%);
+  background: linear-gradient(to right, var(--progress-fill) 50%, var(--progress-empty) 50%);
   background-size: 200% 100%;
   background-position: bottom right;
   width: calc(var(--li-hm) + var(--li-hm));
@@ -68,7 +70,7 @@ li:first-child::after {
 }
 
 .completed {
-  border-color: #0c8cdd;
+  border-color: var(--progress-fill);
 }
 
 .controls {
@@ -82,7 +84,12 @@ button {
   margin: .5em;
   padding: .8em 2.2em;
   color: white;
-  background-color: #0c8cdd;
+  background-color: var(--progress-fill);
   border: none;
   border-radius: .5em;
+}
+
+button:disabled {
+  background-color: var(--progress-empty);
+  cursor: not-allowed;
 }
