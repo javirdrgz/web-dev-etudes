@@ -10,11 +10,14 @@ const dec = (step) => (step > 1 ? step - 1 : step);
 const steps = document.querySelectorAll("li");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
+const progressBar = document.querySelector("ol");
 
 const updateSteps = () => {
   steps.forEach((s, i) =>
     i < step ? s.classList.add("completed") : s.classList.remove("completed")
   );
+  const progress = ((step - 1) / (steps.length - 1)) * 100;
+  progressBar.style.setProperty("--progress", progress + "%");
 };
 
 next.addEventListener("click", () => {
