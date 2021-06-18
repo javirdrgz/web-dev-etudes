@@ -21,52 +21,49 @@ body {
 
 
 ol {
+  --progress: 0%;
+  position: relative;
   font-size: .8rem;
   padding: 0;
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 80vw;
+  max-width: 400px;
 }
 
 li {
-  --bw: 4px;
-  --li-hm: 3em;
-  position: relative;
   display: grid;
   place-content: center;
   padding: 1em;
-  margin: 0 var(--li-hm);
   width: 1.1em;
   height: 1.1em;
   color: #888;
   background-color: #fff;
-  border: var(--bw) solid var(--progress-empty);
+  border: 4px solid var(--progress-empty);
   border-radius: 100%;
   transition: all 1s ease;
 }
 
-li::after {
-  z-index: -1;
+li:first-child {
+  border-color: var(--progress-fill);
+}
+
+ol::before, ol::after {
   content: '';
+  z-index: -1;
   position: absolute;
-  right: 100%;
-  margin-right: var(--bw);
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(to right, var(--progress-fill) 50%, var(--progress-empty) 50%);
-  background-size: 200% 100%;
-  background-position: bottom right;
-  width: calc(var(--li-hm) + var(--li-hm));
-  height: var(--bw);
+  background-color: var(--progress-empty);
+  width: 100%;
+  height: 4px;
   transition: all 0.5s ease-in;
 }
 
-li.completed::after {
-  background-position: bottom left;
-}
-
-li:first-child::after {
-  display: none;
+ol::after {
+  background-color: var(--progress-fill);
+  width: var(--progress);
 }
 
 .completed {
