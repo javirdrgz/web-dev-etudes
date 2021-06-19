@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+:root {
+  box-sizing: border-box;
+  --rotate-transition: transform .4s ease-in;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background-color: #222;
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  background-color: #fafafa;
+  color: #333;
+  padding: 3em;
+  transform-origin: top left;
+  transition: var(--rotate-transition)
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+.rotated {
+  transform: rotate(-20deg);
+}
+
+small {
+  font-style: italic;
+  color: #666;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  line-height: 1.5;
+}
+
+nav {
+  position: fixed;
+  bottom: 5vh;
+  left: -25vw;
+  transition: left .4s ease-in;
+}
+
+nav.visible {
+  left: 0vw;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+li {
+  margin-bottom: 2em;
+}
+
+li:nth-of-type(1) {
+  margin-left: 1em;
+}
+
+li:nth-of-type(2) {
+  margin-left: 2em;
+}
+
+li:nth-of-type(3) {
+  margin-left: 3em;
+}
+
+li i {
+  margin-right: .3em;
+  font-size: 1.2em;
+}
+
+button {
+  position: relative;
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+button:nth-of-type(1) {
+  top: 60%;
+  left: 20%;
+}
+
+button:nth-of-type(2) {
+  top: 65%;
+  left: 40%;
+}
+
+.circle {
+  z-index: 1;
+  background-color: #ff5b75;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+  transition: var(--rotate-transition);
+}
+
+.circle.rotated {
+  transform: rotate(-90deg)
+}
+
+
