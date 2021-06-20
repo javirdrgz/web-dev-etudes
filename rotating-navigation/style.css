@@ -22,14 +22,16 @@ body {
 main {
   background-color: #fafafa;
   color: #333;
-  padding: 3em;
   transform-origin: top left;
-  transition: var(--rotate-transition)
+  transition: var(--rotate-transition);
 }
 
-h1 {
-  margin-top: 2em;
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3.5em;
 }
+
 
 .rotated {
   transform: rotate(-20deg);
